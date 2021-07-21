@@ -12,6 +12,7 @@ class Game
     def play
         welcome
         register_players
+        display_board
     end
 
     def welcome
@@ -34,6 +35,12 @@ class Game
     def save_player(name, letter)
         p = Player.new(name, letter)
         @players.push(p)
+    end
+
+    def display_board
+        puts 
+        puts @board.board
+        puts
     end
 end
 
