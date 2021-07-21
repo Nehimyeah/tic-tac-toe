@@ -7,6 +7,8 @@ class Board
         reset
     end
 
+    private
+    
     def reset
         @board_values = [1,2,3,4,5,6,7,8,9]
         @filled_board = []
@@ -30,6 +32,8 @@ class Board
                  "\t---+---+---\n" + 
                  "\t #{@board_values[6]} | #{@board_values[7]} | #{@board_values[8]} \n"
     end
+
+    public
 
     def add_move(letter, index)
         @filled_board.push(index)

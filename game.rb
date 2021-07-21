@@ -16,6 +16,8 @@ class Game
         play if play_again?
     end
 
+    private
+
     def welcome
         puts "Let's play a simple Tic-Tac-Toe game in the console"
         puts
