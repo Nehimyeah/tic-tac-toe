@@ -4,16 +4,16 @@ require_relative "./board"
 class Game
 
     def initialize
-        @current_player_id = 0
-        @players = []
-        @board = Board.new
+        reset
     end
 
     def play
+        reset
         welcome
         register_players
         display_board
         start_new
+        play if play_again?
     end
 
     def welcome
@@ -80,6 +80,20 @@ class Game
 
     def switch_players
         @current_player_id == 0 ? @current_player_id = 1 : @current_player_id = 0
+    end
+
+    def play_again?
+        puts "Would you like to play a new game? Press 'y' for yes or 'n' for no."
+        if gets.chomp.downcase == 'y'
+            return true
+        end
+        false
+    end
+
+    def reset        
+        @current_player_id = 0
+        @players = []
+        @board = Board.new
     end
 end
 
